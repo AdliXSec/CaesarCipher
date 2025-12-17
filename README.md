@@ -19,8 +19,8 @@ Caesar Cipher adalah salah satu teknik enkripsi yang paling sederhana dan dikena
 1.  **Kloning repositori:**
 
     ```bash
-    git clone https://github.com/nama-pengguna-anda/ChaesarChiper.git
-    cd ChaesarChiper
+    git clone https://github.com/AdliXSec/CaesarCipher
+    cd CaesarCipher
     ```
 
 2.  **Jalankan skrip:**
