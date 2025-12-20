@@ -36,16 +36,18 @@ def caesar_cipher(text, shift, mode='encrypt'):
 
 pesan_asli = input("Masukkan pesan: ")
 key = int(input("Masukkan key: "))
+mode = input("(enc/dec): ")
 
-enkripsi = caesar_cipher(pesan_asli, key, mode='encrypt')
-print(f"\nPlaintext : {pesan_asli}")
-print(f"Ciphertext: {enkripsi}")
-
-print("-" * 20)
-dekripsi = caesar_cipher(enkripsi, key, mode='decrypt')
-print(f"Decode    : {dekripsi}")
-
-print("-" * 20)
-brute = caesar_cipher(enkripsi, key, mode='bruteforce')
-print("Brute Force\n")
-print(brute)
+if mode == "enc":    
+    enkripsi = caesar_cipher(pesan_asli, key, mode='encrypt')
+    print(f"\nPlaintext : {pesan_asli}")
+    print(f"Ciphertext: {enkripsi}")
+else:
+    if key == 0:
+        print()
+        brute = caesar_cipher(pesan_asli, key, mode='bruteforce')
+        print("Brute Force Mode\n")
+        print(brute)
+    else:
+        dekripsi = caesar_cipher(pesan_asli, key, mode='decrypt')
+        print(f"\nDecode    : {dekripsi}")
