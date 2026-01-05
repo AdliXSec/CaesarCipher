@@ -1,7 +1,11 @@
-# Caesar Cipher
+<center><h1>Caesar Cipher</h1></center>
+
+<center>
 
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</center>
 
 Sebuah implementasi modular dan teruji dari algoritma enkripsi dan dekripsi Caesar Cipher dengan antarmuka baris perintah (CLI) yang interaktif.
 
