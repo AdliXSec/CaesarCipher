@@ -1,87 +1,108 @@
 # Caesar Cipher
 
-Sebuah implementasi sederhana dari algoritma enkripsi dan dekripsi Caesar Cipher.
+[![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Tentang Caesar Cipher
+Sebuah implementasi modular dan teruji dari algoritma enkripsi dan dekripsi Caesar Cipher dengan antarmuka baris perintah (CLI) yang interaktif.
 
-Caesar Cipher adalah salah satu teknik enkripsi yang paling sederhana dan dikenal luas. Ini adalah jenis sandi substitusi di mana setiap huruf dalam teks biasa diganti dengan huruf yang posisinya bergeser sejumlah tetap dalam alfabet. Misalnya, dengan pergeseran kiri 3, D akan diganti dengan A, E akan menjadi B, dan seterusnya.
+## Tentang Proyek
+
+Caesar Cipher adalah salah satu teknik enkripsi substitusi yang paling sederhana dan dikenal luas. Dalam sandi ini, setiap huruf dalam teks biasa diganti dengan huruf yang posisinya bergeser sejumlah langkah tetap dalam alfabet.
+
+Proyek ini menyediakan alat baris perintah yang bersih, efisien, dan mudah digunakan untuk melakukan enkripsi, dekripsi, dan serangan _brute-force_ pada sandi Caesar.
+
+---
 
 ## Fitur
 
-- Mengenkripsi teks menggunakan kunci pergeseran yang ditentukan.
-- Mendekripsi teks menggunakan kunci pergeseran yang sama.
-- Menangani huruf besar dan huruf kecil.
-- Mempertahankan spasi dan karakter non-alfabet.
-- Fitur bruteforce tanpa mengetahui key / substitusi
+- **Enkripsi**: Mengenkripsi teks menggunakan pergeseran kunci yang ditentukan.
+- **Dekripsi**: Mendekripsi teks menggunakan pergeseran kunci yang sama.
+- **Brute Force**: Mencoba semua kemungkinan kunci (1-26) untuk mendekripsi pesan secara otomatis.
+- **Interaktif**: Dilengkapi antarmuka baris perintah (CLI) yang ramah pengguna.
+- **Preservasi Karakter**: Menangani huruf besar dan kecil, serta mempertahankan spasi, angka, dan tanda baca.
+- **Teruji**: Dilengkapi dengan suite _unit testing_ yang komprehensif untuk memastikan keandalan.
 
-## Cara Menggunakan
+---
 
-1.  **Kloning repositori:**
+## Instalasi dan Penggunaan
 
-    ```bash
-    git clone https://github.com/AdliXSec/CaesarCipher
-    cd CaesarCipher
-    ```
+#### 1. Prasyarat
 
-2.  **Jalankan skrip:**
-    Anda biasanya akan menjalankan skrip dari terminal Anda, dengan menyediakan teks untuk dienkripsi/dekripsi dan kunci pergeseran.
+- Python 3.6 atau yang lebih baru.
 
-    **Contoh untuk Penggunaan:**
+#### 2. Instalasi
 
-    ```bash
-    python main.py
+Kloning repositori ini ke mesin lokal Anda:
 
-    Masukkan pesan: Kapal berhenti di pelabuhan
-    Masukkan key: 19
+```bash
+git clone https://github.com/AdliXSec/CaesarCipher
+cd CaesarCipher
+```
 
-    Plaintext : Kapal berhenti di pelabuhan
-    Ciphertext: Dtite uxkaxgmb wb ixetunatg
-    --------------------
-    Decode    : Kapal berhenti di pelabuhan
-    --------------------
-    ```
+#### 3. Menjalankan Aplikasi
 
-    **Contoh hasil Bruteforce:**
+Untuk menjalankan aplikasi, gunakan perintah berikut di terminal Anda:
 
-    ```
-    Brute Force
+```bash
+python main.py
+```
 
-    Cshsd twjzwfla va hwdstmzsf, Key : 1
-    Brgrc sviyvekz uz gvcrslyre, Key : 2
-    Aqfqb ruhxudjy ty fubqrkxqd, Key : 3
-    Zpepa qtgwtcix sx etapqjwpc, Key : 4
-    Yodoz psfvsbhw rw dszopivob, Key : 5
-    Xncny oreuragv qv crynohuna, Key : 6
-    Wmbmx nqdtqzfu pu bqxmngtmz, Key : 7
-    Vlalw mpcspyet ot apwlmfsly, Key : 8
-    Ukzkv lobroxds ns zovklerkx, Key : 9
-    Tjyju knaqnwcr mr ynujkdqjw, Key : 10
-    Sixit jmzpmvbq lq xmtijcpiv, Key : 11
-    Rhwhs ilyoluap kp wlshibohu, Key : 12
-    Qgvgr hkxnktzo jo vkrghangt, Key : 13
-    Pfufq gjwmjsyn in ujqfgzmfs, Key : 14
-    Oetep fivlirxm hm tipefyler, Key : 15
-    Ndsdo ehukhqwl gl shodexkdq, Key : 16
-    Mcrcn dgtjgpvk fk rgncdwjcp, Key : 17
-    Lbqbm cfsifouj ej qfmbcvibo, Key : 18
-    Kapal berhenti di pelabuhan, Key : 19
-    Jzozk adqgdmsh ch odkzatgzm, Key : 20
-    Iynyj zcpfclrg bg ncjyzsfyl, Key : 21
-    Hxmxi yboebkqf af mbixyrexk, Key : 22
-    Gwlwh xandajpe ze lahwxqdwj, Key : 23
-    Fvkvg wzmcziod yd kzgvwpcvi, Key : 24
-    Eujuf vylbyhnc xc jyfuvobuh, Key : 25
-    Dtite uxkaxgmb wb ixetunatg, Key : 26
-    ```
+Anda akan disambut dengan menu interaktif:
 
-## Penjelasan Kode (untuk pengembang)
+```
+Caesar Cipher Program
+1. Encrypt
+2. Decrypt
+3. Brute Force
+4. Exit
+Choose an option (1-4):
+```
 
-Bagian ini secara singkat menjelaskan logika inti dari implementasi Caesar Cipher:
+Pilih opsi yang diinginkan dan ikuti instruksi yang diberikan di layar.
 
-- `char.isalpha()`: Memeriksa apakah suatu karakter adalah huruf alfabet.
-- `ord('A')`: Mengembalikan nilai integer ASCII/Unicode dari karakter 'A'. Digunakan untuk menghitung posisi huruf dalam alfabet (indeks 0).
-- `chr()`: Mengonversi integer (nilai ASCII/Unicode) kembali menjadi karakter.
+#### 4. Menjalankan Unit Test
+
+Proyek ini dilengkapi dengan serangkaian tes untuk memastikan semua fungsi berjalan dengan benar. Untuk menjalankan tes, gunakan perintah berikut:
+
+```bash
+python -m unittest -v test_main.py
+```
+
+Anda akan melihat output yang merinci setiap proses pengujian yang dijalankan.
+
+---
+
+## Struktur Proyek
+
+```
+ChaesarChiper/
+│
+├── .git/
+├── main.py         # Skrip utama aplikasi dengan logika dan CLI
+├── test_main.py    # Unit test untuk semua fungsionalitas
+└── README.md       # Anda sedang membacanya :)
+```
+
+---
+
+## Kontribusi
+
+Kontribusi untuk pengembangan proyek ini sangat diterima! Jika Anda memiliki ide untuk perbaikan atau menemukan bug, silakan buka _issue_ atau kirim _pull request_.
+
+1.  _Fork_ repositori ini.
+2.  Buat _branch_ fitur baru (`git checkout -b fitur/FiturBaru`).
+3.  _Commit_ perubahan Anda (`git commit -m 'Menambahkan FiturBaru'`).
+4.  _Push_ ke _branch_ tersebut (`git push origin fitur/FiturBaru`).
+5.  Buka _Pull Request_.
+
+---
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk detailnya. (Catatan: Anda mungkin perlu menambahkan file `LICENSE` jika belum ada).
+
+---
 
 ## Penulis
 
-Naufal Syahruradli
+- **Naufal Syahruradli**
