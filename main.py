@@ -1,5 +1,14 @@
 import sys
 
+"""
+Plaintext saya : Kapal berhenti di pelabuhan
+Chipertext saya :
+
+Plaintext kelompok lain :
+Chipertext kelompok lain : lcncpmcmkdgtucocvgocp
+"""
+
+
 def caesar_cipher(text, shift, mode='encrypt'):
     if mode == 'decrypt':
         shift = -shift
